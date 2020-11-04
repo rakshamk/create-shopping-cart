@@ -1,4 +1,4 @@
-# react-redux-shopping-cart
+# shopping-cart
 
 Shopping cart with add, remove, search, filter functionality.
 
