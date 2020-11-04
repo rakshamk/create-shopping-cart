@@ -19,7 +19,7 @@ Node, npm
 A step by step series of examples that tell you how to get a development env running
 
 ```
-clone git https://github.com/prograk/react-redux-shopping-cart.git
+clone git https://github.com/rakshamk/shopping-cart.git
 ```
 ```
 npm install
