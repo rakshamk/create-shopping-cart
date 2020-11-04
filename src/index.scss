@@ -1,0 +1,516 @@
+$blue: #4169EA;
+$white: #FFFFFF;
+$yellow: #F3AD33;
+$gray: #A1A2A2;
+$green: #5CA31C;
+$red: red;
+$black: #000000;
+
+/** SPINNER CSS **/
+
+/** loader Animation **/
+
+.spinner {
+    margin: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    >div {
+        height: 20px;
+        width: 20px;
+        background-color: $blue;
+        margin: 0 3px;
+
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+
+    .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+    }
+
+    .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+    }
+}
+
+@-webkit-keyframes sk-bouncedelay {
+
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+    }
+
+    40% {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes sk-bouncedelay {
+
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+/** loader Animation **/
+
+/** SPINNER CSS **/
+
+/** RANGE SLIDER CSS OVERRIDE **/
+
+.input-range__label--value {
+    display: none;
+}
+
+.input-range__label {
+    top: -20px;
+    color: $gray;
+    pointer-events: none;
+}
+
+/** RANGE SLIDER OVERRIDE **/
+
+.modal {
+    &.show {
+        display: block;
+        background: rgba(0, 0, 0, .3);
+    }
+}
+
+.btn {
+    border-radius: 100px;
+    color: #000;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+
+    &-yellow {
+        background: $yellow;
+    }
+
+    &-blue {
+        color: $white !important;
+        background: $blue;
+    }
+
+    &-round {
+        height: 40px;
+        width: 40px;
+        border-radius: 100px;
+        border: 1px solid $gray;
+        margin: 0 14px;
+    }
+
+    &-transparent {
+        background: transparent;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        filter: contrast(0.8);
+        color: inherit;
+    }
+}
+
+.filter {
+    padding-top: 10px;
+
+    &_title {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 5px 0 35px;
+    }
+
+    &_label {
+        text-align: center;
+        font-weight: bold;
+        color: $gray;
+    }
+
+    .btn {
+        margin-top: 30px;
+    }
+
+    &_slider {
+        max-width: calc(100% - 50px);
+        margin: 0 auto;
+    }
+
+}
+
+.header {
+    padding: 10px 0;
+    background-color: $yellow;
+
+    &_input {
+        background: transparent;
+        border: none;
+        color: $white;
+        border-bottom: 1px solid $white;
+        margin-right: -30px;
+        padding: 5px;
+        padding-right: 30px;
+        visibility: hidden;
+
+        &::placeholder {
+            color: $white;
+        }
+
+        &.show {
+            visibility: visible;
+        }
+    }
+
+    &_search {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &_icon {
+        color: $white;
+        font-size: 30px;
+
+        &_search {
+            cursor: pointer;
+        }
+
+        &-yellow {
+            color: $yellow;
+        }
+    }
+
+    &_count {
+        background: $red;
+        text-align: center;
+        color: $white;
+        padding: 0;
+        border-radius: 50px;
+        font-size: 10px;
+        width: 15px;
+        height: 15px;
+        right: -7px;
+        top: -3px;
+        position: absolute;
+    }
+
+    &_cart {
+        position: relative;
+    }
+}
+
+.product {
+    display: flex;
+    flex-flow: row wrap;
+
+    &_col_list {
+        border-left: 1px solid lighten($color: $gray, $amount: 20%);
+        padding-top: 10px;
+        min-height: calc(100vh - 100px);
+    }
+
+    &_card {
+        flex: 1 0 20%;
+        max-width: 20%;
+        border: none;
+    }
+
+    &_image {
+        overflow: hidden;
+        text-align: center;
+
+        img {
+            height: 100%;
+            width: 120px;
+        }
+    }
+
+    &_price {
+        &_display {
+            color: $gray;
+        }
+
+        &_discount {
+            color: $green;
+        }
+    }
+}
+
+.subHeader {
+    &_title {
+        color: $black;
+        font-size: 18px;
+    }
+
+    &_list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+        color: $gray;
+
+        li {
+            margin: 5px 30px;
+            cursor: pointer;
+            font-size: 15px;
+
+            div {
+                &.active {
+                    color: $blue;
+                    position: relative;
+
+                    &:after {
+                        content: "";
+                        height: 2px;
+                        width: 100%;
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                        background: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    &_mobile {
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        &_common {
+            flex: 1;
+            text-align: center;
+        }
+    }
+}
+
+.cart {
+    &_box {
+        .card-header {
+            font-weight: bold;
+            color: $gray;
+            font-size: 18px;
+        }
+    }
+
+    &_container {
+        margin-top: 20px;
+    }
+
+    &_data {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+
+    &_label {
+        position: relative;
+        min-width: 100px;
+
+        &:after {
+            content: ":";
+            position: absolute;
+            right: -8px;
+        }
+    }
+}
+
+.card_product {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    &_info {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+    }
+
+    &_title {
+        justify-self: flex-start;
+    }
+
+    &_image {
+        margin-right: 30px;
+
+        img {
+            max-height: 100px;
+        }
+    }
+
+
+    &_quantitybutton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    &_remove {
+        span {
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
+
+.footer {
+    background-color: $yellow;
+    color: $white;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.body {
+    &_list {
+        list-style: none;
+
+        li {
+            margin: 10px 0;
+
+            div {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 100px;
+                    border: 1px solid $gray;
+                    position: absolute;
+                    left: -30px;
+                }
+
+                &.active {
+                    &:before {
+                        border-color: $blue;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        height: 12px;
+                        width: 12px;
+                        background: $blue;
+                        border-radius: 100px;
+                        left: -26px;
+                        top: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .product {
+        &_card {
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+    }
+}
+
+@media screen and (max-width: 1060px) {
+
+    .cart {
+        &_row {
+            flex-flow: column nowrap;
+
+            >div {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .product {
+        &_card {
+            flex-basis: 30%;
+            max-width: 30%;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .product {
+
+        &_col {
+            &_list {
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+
+            &_filter {
+                display: none;
+            }
+        }
+
+        &_card {
+            flex-basis: 50%;
+            max-width: 50%;
+            border-radius: 0;
+            border-bottom: 1px solid $gray;
+
+            &:nth-child(2n + 1) {
+                border-right: 1px solid $gray;
+
+            }
+        }
+    }
+
+    .subHeader {
+        &_mobile {
+            display: flex;
+        }
+
+        &_list {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product {
+        padding: 0;
+
+        &_body {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    .card {
+        &_product {
+            flex-flow: column nowrap;
+
+            >div:not(:last-child) {
+                width: 100%;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+        }
+    }
+}
